@@ -9,126 +9,139 @@ $(document).ready(function () {
     //button-submit on click function
     $(".button-submit").on("click", function (event) {
 
-            //stop page from refreshing
-            event.preventDefault();
+        //stop page from refreshing
+        event.preventDefault();
 
-            //grab value from user input text field
-            var userInput = $("#userReactionInput").val().trim();
-            console.log(userInput);
+        //grab value from user input text field
+        var userInput = $("#userReactionInput").val().trim();
+        console.log(userInput);
 
-            //push value into topics array
-            topics.push(userInput);
-            console.log(topics);
+        //push value into topics array
+        topics.push(userInput);
+        console.log(topics);
 
-            //clear reaction-buttons div
-            $("#reaction-buttons").empty();
+        //clear reaction-buttons div
+        $("#reaction-buttons").empty();
 
-            //run createButton function
-            createButton();
+        //run createButton function
+        createButton();
 
-            //clear text input field
-            $("#userReactionInput").val("");
-
+        //clear text input field
+        $("#userReactionInput").val("");
     })
 
 
-//button-reaction on click function
-$(document).on("click", ".button-reaction", function () {
+    //button-reaction on click function
+    $(document).on("click", ".button-reaction", function () {
 
-    //clear reaction-gifs div
-    $("#reaction-gifs").empty();
+        //clear reaction-gifs div
+        $("#reaction-gifs").empty();
 
-    //Grab data-reaction value from button
-    var reaction = $(this).attr("data-reaction");
+        //Grab data-reaction value from button
+        var reaction = $(this).attr("data-reaction");
 
-    //Create queryURL
-    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reaction + "&api_key=ChcveAwioHGwKApnWcFtJUfVHlcHyyj8&limit=10";
+        //Create queryURL
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reaction + "&api_key=ChcveAwioHGwKApnWcFtJUfVHlcHyyj8&limit=10";
 
-    //Run AJAX request with queryURL
-    $.ajax({
-        url: queryURL,
-        method: "GET"
+        //Run AJAX request with queryURL
+        $.ajax({
+                url: queryURL,
+                method: "GET"
+            })
+            //.then function
+            .then(function (response) {
+                console.log(queryURL);
+                console.log(response);
+
+                //store response in a var
+                var results = response.data;
+
+                //For loop through each result item
+                for (var i = 0; i < results.length; i++) {
+
+                    //create new div
+                    var reactionDiv = $("<div>");
+
+                    //create new p tag for result's rating
+                    var p = $("<p>").text("Rating: " + results[i].rating);
+
+                    //create new img div
+                    var reactionImg = $("<img>");
+
+                    //necessary class: .gif
+                    reactionImg.addClass("col").addClass("gif");
+
+                    //set src to still image
+                    reactionImg.attr("src", results[i].images.fixed_height_still.url);
+
+                    //set still image url attr
+                    reactionImg.attr("data-still", results[i].images.fixed_height_still.url);
+
+                    //set animated image url attr
+                    reactionImg.attr("data-animate", results[i].images.fixed_height.url);
+
+                    //necessary attr: data-state | set data-state to still
+                    reactionImg.attr("data-state", "still");
+
+
+                    //append p and img tag to div
+                    reactionDiv.append(p).append(reactionImg);
+
+                    //append reactionDiv to reaction-gifs div
+                    $("#reaction-gifs").append(reactionDiv);
+                }
+            })
     })
-    //.then function
-    .then(function(response) {
-        console.log(queryURL);
-        console.log(response);
-
-        //store response in a var
-        var results = response.data;
-
-        //For loop through each result item
-        for (var i = 0; i < results.length; i++) {
-
-            //create new div
-            var reactionDiv = $("<div>");
-
-            //create new p tag for result's rating
-            var p = $("<p>").text("Rating: " + results[i].rating);
-
-            //create new img div
-            var reactionImg = $("<img>");
-            
-            //necessary class: .gif
-            reactionImg.addClass("col").addClass("gif");
-
-            //set src to still image
-            reactionImg.attr("src", results[i].images.fixed_height_still.url);
-
-            //set still image url attr
-            reactionImg.attr("data-still", results[i].images.fixed_height_still.url);
-
-            //set animated image url attr
-            reactionImg.attr("data-animated", results[i].images.fixed_height.url);
-
-            //necessary attr: data-state | set data-state to still
-            reactionImg.attr("data-state", "still");
 
 
-            //append p and img tag to div
-            reactionDiv.append(p).append(reactionImg);
+    //.gif on click function
+    $(document).on("click", ".gif", function () {
 
-            //append reactionDiv to reaction-gifs div
-            $("#reaction-gifs").append(reactionDiv);
+        //grab data-state value and store in var
+        var state = $(this).attr("data-state");
+
+        //if state === still
+        if (state === "still") {
+
+            //change src to animated gif url
+            $(this).attr("src", $(this).attr("data-animate"));
+
+            //change data-state to animate
+            $(this).attr("data-state", "animate");
+
+        //else
+        } else {
+
+            //change src to still gif url
+            $(this).attr("src", $(this).attr("data-still"));
+
+            //change data-state to still
+            $(this).attr("data-state", "still");
         }
     })
 
-})
 
+    //function to create buttons based on topics var
+    function createButton() {
 
-//.gif on click function
-//grab data-state value and store in var
-//if state === still
-//change src to animated gif url
-//change data-state to animate
+        //for loop that iterates through topics var
+        for (var i = 0; i < topics.length; i++) {
 
-//else
-//change src to still gif url
-//change data-state to still
+            //var that creates a new <button> html tag
+            var button = $('<button>');
 
-//function to create buttons based on topics var
-function createButton() {
+            //necessary classes: btn, btn-primary, button-reaction
+            button.addClass("btn").addClass("btn-primary").addClass("button-reaction");
 
-    //for loop that iterates through topics var
-    for (var i = 0; i < topics.length; i++) {
+            //necessary attr: data-reaction + value
+            button.attr("data-reaction", topics[i]);
 
-        //var that creates a new <button> html tag
-        var button = $('<button>');
+            //add button text
+            button.text(topics[i]);
 
-        //necessary classes: btn, btn-primary, button-reaction
-        button.addClass("btn").addClass("btn-primary").addClass("button-reaction");
+            //append to #reaction-buttons div
+            $("#reaction-buttons").append(button);
 
-        //necessary attr: data-reaction + value
-        button.attr("data-reaction", topics[i]);
-
-        //add button text
-        button.text(topics[i]);
-
-        //append to #reaction-buttons div
-        $("#reaction-buttons").append(button);
-
+        }
     }
-
-}
-
 })
