@@ -2,7 +2,7 @@
 
 This GIFtastic gif fetcher is my fourth project working with javascript/jquery for the UCSD Full Stack Web Developer Bootcamp. This project showcases my understanding of AJAX, APIs, and just for fun, bootstrap modals as well.
 
-In this app, there are some buttons with different emotions/reactions already populated. When a user click on any of these buttons, the app will use the Giphy API to fetch 10 gifs related to the emotion/reaction displayed on the button.
+In this fully responsive app, there are some buttons with different emotions/reactions already populated. When a user click on any of these buttons, the app will use the Giphy API to fetch 10 gifs related to the emotion/reaction displayed on the button.
 
 The parental ratings (G, PG, PG-13, etc) are also displayed above each gif. The gifs on default are still. When the user clicks on the gifs, this triggers an on-click function that animates the gifs. If the user clicks on the gifs a second time, they return to being still.
 
