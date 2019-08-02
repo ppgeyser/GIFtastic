@@ -16,20 +16,44 @@ $(document).ready(function () {
         var userInput = $("#userReactionInput").val().trim();
         console.log(userInput);
 
-        //push value into topics array
-        topics.push(userInput);
-        console.log(topics);
+        //prevent duplicates from being added
+        if (topics.indexOf(userInput) > -1) {
 
-        //clear reaction-buttons div
-        $("#reaction-buttons").empty();
+            //alert duplicate input
+            $('#duplicateModal').modal();
 
-        //run createButton function
-        createButton();
+            //clear text input field
+            $("#userReactionInput").val("");
 
-        //clear text input field
-        $("#userReactionInput").val("");
+        //prevent blank inputs from being added
+        } else if (userInput.length === 0) {
+
+            //alert blank input
+            $('#blankModal').modal();
+
+            //clear text input field
+            $("#userReactionInput").val("");
+            
+        } else {
+            addButton();
+        }
+
+        function addButton() {
+            //push value into topics array
+            topics.push(userInput);
+            console.log(topics);
+    
+            //clear reaction-buttons div
+            $("#reaction-buttons").empty();
+    
+            //run createButton function
+            createButton();
+    
+            //clear text input field
+            $("#userReactionInput").val("");
+        }
+
     })
-
 
     //button-reaction on click function
     $(document).on("click", ".button-reaction", function () {
@@ -93,7 +117,6 @@ $(document).ready(function () {
             })
     })
 
-
     //.gif on click function
     $(document).on("click", ".gif", function () {
 
@@ -119,7 +142,6 @@ $(document).ready(function () {
             $(this).attr("data-state", "still");
         }
     })
-
 
     //function to create buttons based on topics var
     function createButton() {
