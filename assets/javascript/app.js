@@ -68,6 +68,9 @@ $(document).on("click", ".button-reaction", function () {
 
             //create new img div
             var reactionImg = $("<img>");
+            
+            //necessary class: .gif
+            reactionImg.addClass("col").addClass("gif");
 
             //set src to still image
             reactionImg.attr("src", results[i].images.fixed_height_still.url);
@@ -81,8 +84,6 @@ $(document).on("click", ".button-reaction", function () {
             //necessary attr: data-state | set data-state to still
             reactionImg.attr("data-state", "still");
 
-            //necessary class: .gif
-            reactionImg.addClass("gif");
 
             //append p and img tag to div
             reactionDiv.append(p).append(reactionImg);

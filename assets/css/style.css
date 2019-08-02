@@ -1,3 +1,7 @@
+p {
+    padding-left: 15px;
+}
+
 .button-submit {
     margin-top: 10px;
 }
@@ -5,4 +9,8 @@
 .button-reaction {
     margin-top: 5px;
     margin-right: 5px;
+}
+
+#reaction-buttons {
+    margin-bottom: 15px;
 }
