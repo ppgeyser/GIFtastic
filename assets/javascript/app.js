@@ -33,21 +33,67 @@ $(document).ready(function () {
 
 
 //button-reaction on click function
-//Grab data-reaction value from button
-//Create queryURL
-//Run AJAX request with queryURL
-//.then function
-//store response in a var
-//For loop through each result item
-//create new div
-//create new p tag for result's rating
-//create new img div
-//create and store image tag for still image
-//set src to still image
-//creat and store image tag for animated image
-//necessary attr: data-state
-//set data-state to still
-//necessary class: .gif
+$(document).on("click", ".button-reaction", function () {
+
+    //clear reaction-gifs div
+    $("#reaction-gifs").empty();
+
+    //Grab data-reaction value from button
+    var reaction = $(this).attr("data-reaction");
+
+    //Create queryURL
+    var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + reaction + "&api_key=ChcveAwioHGwKApnWcFtJUfVHlcHyyj8&limit=10";
+
+    //Run AJAX request with queryURL
+    $.ajax({
+        url: queryURL,
+        method: "GET"
+    })
+    //.then function
+    .then(function(response) {
+        console.log(queryURL);
+        console.log(response);
+
+        //store response in a var
+        var results = response.data;
+
+        //For loop through each result item
+        for (var i = 0; i < results.length; i++) {
+
+            //create new div
+            var reactionDiv = $("<div>");
+
+            //create new p tag for result's rating
+            var p = $("<p>").text("Rating: " + results[i].rating);
+
+            //create new img div
+            var reactionImg = $("<img>");
+
+            //set src to still image
+            reactionImg.attr("src", results[i].images.fixed_height_still.url);
+
+            //set still image url attr
+            reactionImg.attr("data-still", results[i].images.fixed_height_still.url);
+
+            //set animated image url attr
+            reactionImg.attr("data-animated", results[i].images.fixed_height.url);
+
+            //necessary attr: data-state | set data-state to still
+            reactionImg.attr("data-state", "still");
+
+            //necessary class: .gif
+            reactionImg.addClass("gif");
+
+            //append p and img tag to div
+            reactionDiv.append(p).append(reactionImg);
+
+            //append reactionDiv to reaction-gifs div
+            $("#reaction-gifs").append(reactionDiv);
+        }
+    })
+
+})
+
 
 //.gif on click function
 //grab data-state value and store in var
