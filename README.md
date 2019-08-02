@@ -8,7 +8,7 @@ The parental ratings (G, PG, PG-13, etc) are also displayed above each gif. The 
 
 When the user clicks on another button, if there were any gifs displayed, they are cleared out and 10 new gifs related to the button will populate.
 
-The user can create new buttons using the input form to the right of the viewport. After hitting the submit button, the input text field is cleared.
+The user can create new buttons using the input form to the left of the viewport. After hitting the submit button, the input text field is cleared.
 
 If the user attempts to enter a reaction/emotion that already has a button, a modal will appear alerting the user that there is already a button with that reaction/emotion. The attempted user input will then fail to populate in the list of buttons.
 
