@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,19 +8,29 @@
     <link rel="stylesheet" href="assets/css/style.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-    <title>GIFtastic!</title>
+    <title>GIFtastic Reactions!</title>
 </head>
+
 <body>
-    
-    <div class="container-fluid " id="animal-buttons">
+
+    <div class="container-fluid " id="reaction-buttons">
     </div>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-8" id="animal-gifs"></div>
-            <div class="col-4" id="animal-input"></div>
+            <div class="col-8" id="reaction-gifs"></div>
+            <div class="col-4" id="reaction-input">
+                <form>
+                    <div class="form-group">
+                        <label for="userReactionInput">Add a reaction</label>
+                        <input type="text" class="form-control" id="userReactionInput" placeholder="Enter reaction">
+                        <button type="submit" class="btn btn-primary" id="button-submit">Submit</button>
+                </form>
+
+            </div>
         </div>
     </div>
 
 </body>
+
 </html>
