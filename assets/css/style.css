@@ -1,3 +1,8 @@
-#button-submit {
+.button-submit {
     margin-top: 10px;
+}
+
+.button-reaction {
+    margin-top: 5px;
+    margin-right: 5px;
 }

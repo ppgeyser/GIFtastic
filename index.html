@@ -14,20 +14,29 @@
 <body>
 
     <div class="container-fluid " id="reaction-buttons">
+        <button class="btn btn-primary button-reaction" data-reaction="sad">sad</button>
+        <button class="btn btn-primary button-reaction" data-reaction="happy">happy</button>
+        <button class="btn btn-primary button-reaction" data-reaction="angry">angry</button>
+        <button class="btn btn-primary button-reaction" data-reaction="thanks">thanks</button>
+        <button class="btn btn-primary button-reaction" data-reaction="excited">excited</button>
     </div>
 
     <div class="container-fluid">
         <div class="row">
-            <div class="col-8" id="reaction-gifs"></div>
+
+            <div class="col-8" id="reaction-gifs">
+                
+            </div>
+
             <div class="col-4" id="reaction-input">
                 <form>
                     <div class="form-group">
                         <label for="userReactionInput">Add a reaction</label>
                         <input type="text" class="form-control" id="userReactionInput" placeholder="Enter reaction">
-                        <button type="submit" class="btn btn-primary" id="button-submit">Submit</button>
+                        <button type="submit" class="btn btn-primary button-submit">Submit</button>
                 </form>
-
             </div>
+
         </div>
     </div>
 
