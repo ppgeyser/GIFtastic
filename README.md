@@ -14,14 +14,14 @@ If the user attempts to enter a reaction/emotion that already has a button, a mo
 
 Additionally, an attempt to submit a blank input will trigger another modal that alerrts the user that their input is invalid and that they need to enter an emotion/reaction. The attempted user input will again fail to populate in the list of buttons.
 
-![Iaail2I](https://user-images.githubusercontent.com/50184318/62401802-9ccdb100-b539-11e9-9b4f-9ec90fd80276.png)
+![iaMXSCh](https://user-images.githubusercontent.com/50184318/62402908-fc7a8b00-b53e-11e9-98b2-c970ec2c8e39.png)
 
-![H4znQXM](https://user-images.githubusercontent.com/50184318/62401842-b40c9e80-b539-11e9-91e2-b108620bd970.jpg)
+![3APPUpH](https://user-images.githubusercontent.com/50184318/62402943-38155500-b53f-11e9-86d8-916539277d98.jpg)
 
-![GV603ds](https://user-images.githubusercontent.com/50184318/62401867-d69eb780-b539-11e9-908f-2d0960c635e0.jpg)
+![AldoPBi](https://user-images.githubusercontent.com/50184318/62402972-524f3300-b53f-11e9-9705-93f76db3d898.jpg)
 
-![SQB4U9V](https://user-images.githubusercontent.com/50184318/62401895-fb932a80-b539-11e9-9755-e4c5d874ea45.jpg)
+![qDzERMV](https://user-images.githubusercontent.com/50184318/62403006-7e6ab400-b53f-11e9-96a4-7acf931d6a89.jpg)
 
-![z551owG](https://user-images.githubusercontent.com/50184318/62401924-24b3bb00-b53a-11e9-91bd-229a74c620fe.jpg)
+![v1riyYn](https://user-images.githubusercontent.com/50184318/62403027-99d5bf00-b53f-11e9-97fd-fe6952703db3.jpg)
 
-![A8hJwfu](https://user-images.githubusercontent.com/50184318/62401947-3b5a1200-b53a-11e9-9f1b-b24e5e5323cb.jpg)
+![lXpB3wS](https://user-images.githubusercontent.com/50184318/62403061-aeb25280-b53f-11e9-9a00-b22a22392572.jpg)
