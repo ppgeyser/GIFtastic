@@ -12,7 +12,7 @@ The user can create new buttons using the input form to the left of the viewport
 
 If the user attempts to enter a reaction/emotion that already has a button, a modal will appear alerting the user that there is already a button with that reaction/emotion. The attempted user input will then fail to populate in the list of buttons.
 
-Additionally, an attempt to submit a blank input will trigger another modal that alerrts the user that their input is invalid and that they need to enter an emotion/reaction. The attempted user input will again fail to populate in the list of buttons.
+Additionally, an attempt to submit a blank input will trigger another modal that alerts the user that their input is invalid and that they need to enter an emotion/reaction. The attempted user input will again fail to populate in the list of buttons.
 
 ![iaMXSCh](https://user-images.githubusercontent.com/50184318/62402908-fc7a8b00-b53e-11e9-98b2-c970ec2c8e39.png)
 
