@@ -4,7 +4,7 @@ In this fully responsive app, there are some buttons with different emotions/rea
 
 The parental ratings (G, PG, PG-13, etc) are also displayed above each gif. The gifs on default are still. When the user clicks on the gifs, this triggers an on-click function that animates the gifs. If the user clicks on the gifs a second time, they return to being still.
 
-Additionally, an attempt to submit a blank input will trigger another modal that alerts the user that their input is invalid and that they need to enter an emotion/reaction. The attempted user input will again fail to populate in the list of buttons.
+When the user clicks on another button, if there were any gifs displayed, they are cleared out and 10 new gifs related to the button will populate.
 
 ![iaMXSCh](https://user-images.githubusercontent.com/50184318/62402908-fc7a8b00-b53e-11e9-98b2-c970ec2c8e39.png)
 
@@ -20,7 +20,7 @@ If the user attempts to enter a reaction/emotion that already has a button, a mo
 
 ![v1riyYn](https://user-images.githubusercontent.com/50184318/62403027-99d5bf00-b53f-11e9-97fd-fe6952703db3.jpg)
 
-When the user clicks on another button, if there were any gifs displayed, they are cleared out and 10 new gifs related to the button will populate.
+Additionally, an attempt to submit a blank input will trigger another modal that alerts the user that their input is invalid and that they need to enter an emotion/reaction. The attempted user input will again fail to populate in the list of buttons.
 
 ![lXpB3wS](https://user-images.githubusercontent.com/50184318/62403061-aeb25280-b53f-11e9-9a00-b22a22392572.jpg)
 
